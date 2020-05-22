@@ -44,14 +44,21 @@ set pathServer="path do server" Exemplo: "c:\server"
 Para executar o restart dentro de um script sqf execute:
 
 ```sqf
-_ret = ("Arma2Net" callExtension "AutoRestart"); 
-diag_log Format["%1", _ret];
+If !(Call Compile ("Arma2Net" callExtension "AutoRestart")) Then {
+  //Erro na execução
+};
 ```
 
 ##### Retornos da execução
 
 AutoRestart pode retornar:
 
-"Arquivo exe não encontrado" - > o arquivo bat RJ-AtualizarMissao.bat não esta na pasta do servidor
+"False" - > Ocorreu algum erro na execução da função
 
-"Reiniciando" - > Executou o bat outros erros são da execução do C#
+"True" - > A execução normalmente sem nenhuma falha 
+
+#### Atualizações
+
+**1.0.0.1**
+
+Alterado o retorno da função, agora retorna true ou false, true para execução correta e false caso ocorra algum erro
