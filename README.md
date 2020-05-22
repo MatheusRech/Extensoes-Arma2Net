@@ -55,7 +55,7 @@ AutoRestart pode retornar:
 
 "False" - > Ocorreu algum erro na execução da função
 
-"True" - > A execução normalmente sem nenhuma falha 
+"True" - > A execução foi finalizada normalmente sem nenhuma falha 
 
 #### Atualizações
 
